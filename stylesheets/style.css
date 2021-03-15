@@ -10,9 +10,13 @@ footer {
 
 /* clicker */
 #click {
-  width: 8rem;
-  height: 8rem;
+  width: 24rem;
+  height: 24rem;
   font-size: 2rem;
+  background:url("/dokumentation/BimageClicker.png");
+  background-size: cover;
+  border-radius: 100%;
+  border: 5px solid black;
 }
 
 #msgbox {
