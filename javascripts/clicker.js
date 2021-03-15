@@ -8,11 +8,11 @@
 * Viktigt: queryselector ger oss ett html element eller flera om det finns.
 */
 const clickerButton = document.querySelector('#click');
-const moneyTracker = document.querySelector('#money');
+const ManaTracker = document.querySelector('#Mana');
 const mpsTracker = document.querySelector('#mps');
-const followerTracker = document.querySelector('#followers');
-const upgradeList = document.querySelector('#upgradelist')
-const msgbox = document.querySelector('#msgbox')
+const mpcTracker = document.querySelector('#mpc');
+const upgradeList = document.querySelector('#upgradelist');
+const msgbox = document.querySelector('#msgbox');
 
 /* Följande variabler använder vi för att hålla reda på hur mycket pengar som
  * spelaren, har och tjänar.
@@ -21,9 +21,9 @@ const msgbox = document.querySelector('#msgbox')
  * värden, utan då använder vi let.
  * Läs mer: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
  */
-let money = 0;
-let moneyPerClick = 1;
-let moneyPerSecond = 0;
+let Mana = 0;
+let ManaPerSecond = 0;
+let ManaPerClick = 1;
 let last = 0;
 
 /* Med ett valt element, som knappen i detta fall så kan vi skapa listeners
@@ -38,7 +38,7 @@ let last = 0;
  */
 clickerButton.addEventListener('click', () => {
   // vid click öka score med 1
-  money += moneyPerClick;
+  Mana += ManaPerClick;
   // console.log(clicker.score);
 }, false);
 
@@ -52,12 +52,12 @@ clickerButton.addEventListener('click', () => {
  * Sist i funktionen så kallar den på sig själv igen för att fortsätta uppdatera.
  */
 function step(timestamp) {
-  moneyTracker.textContent = Math.round(money);
-  mpsTracker.textContent = moneyPerSecond;
-  followerTracker.textContent = moneyPerClick;
+  ManaTracker.textContent = Math.round(Mana);
+  mpsTracker.textContent = ManaPerSecond;
+  mpcTracker.textContent = ManaPerClick;
 
   if (timestamp >= last + 1000) {
-    money += moneyPerSecond;
+    Mana += ManaPerSecond;
     last = timestamp;
   }
   window.requestAnimationFrame(step);
@@ -93,27 +93,32 @@ upgrades = [
   {
     name: 'Mana Infused Candles',
     cost: 10,
-    amount: 1
+    amount: 1,
+    Tamount: 0
   },
   {
     name: 'Grimoire',
     cost: 100,
-    amount: 10
+    amount: 10,
+    Tamount: 0
   },
   {
     name: 'Students',
     cost: 1000,
-    amount: 100
+    amount: 100,
+    Tamount: 0
   },
   {
     name: 'Magic Library',
     cost: 5000,
-    amount: 500
+    amount: 500,
+    Tamount: 0
   },
   {
     name: 'Wizard Tower',
     cost: 50000,
-    amount: 5000
+    amount: 5000,
+    Tamount: 0
   }
 ]
 
@@ -141,24 +146,29 @@ function createCard(upgrade) {
   const header = document.createElement('p');
   header.classList.add('title');
   const cost = document.createElement('p');
+  const Tamount = document.createElement('p');
 
+  Tamount.textContent = '(' + upgrade.Tamount + ')';
   header.textContent = upgrade.name + ', +' + upgrade.amount + ' Mana Per Second.';
-  cost.textContent = 'Buy for ' + upgrade.cost + ' Mana Points';
+  cost.textContent = 'Buy for ' + upgrade.cost + ' Mana points';
+
 
   card.addEventListener('click', (e) => {
-    if (money >= upgrade.cost) {
-      followers++;
-      moneyPerClick++;
-      money -= upgrade.cost;
+    if (Mana >= upgrade.cost) {
+      ManaPerClick++;
+      Mana -= upgrade.cost;
       upgrade.cost *= 1.5;
-      cost.textContent = 'Köp för ' + upgrade.cost + ' likes';
-      moneyPerSecond += upgrade.amount;
-      message('Grattis du har en ny följare!', 'success');
+      upgrade.Tamount++;
+      cost.textContent = 'Buy for ' + Math.round(upgrade.cost) + ' Mana points';
+      Tamount.textContent = '(' + upgrade.Tamount + ')';
+      ManaPerSecond += upgrade.amount;
+      message('You bought "' + upgrade.name + '"', 'success');
     } else {
-      message('Du har inte råd.', 'warning');
+      message('You need more Mana', 'warning');
     }
   });
 
+  card.appendChild(Tamount);
   card.appendChild(header);
   card.appendChild(cost);
   return card;
