@@ -91,19 +91,29 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
   {
-    name: 'Arg gubbe',
+    name: 'Mana Infused Candles',
     cost: 10,
     amount: 1
   },
   {
-    name: 'Internettroll',
+    name: 'Grimoire',
     cost: 100,
     amount: 10
   },
   {
-    name: 'Twitterbot',
+    name: 'Students',
     cost: 1000,
     amount: 100
+  },
+  {
+    name: 'Magic Library',
+    cost: 5000,
+    amount: 500
+  },
+  {
+    name: 'Wizard Tower',
+    cost: 50000,
+    amount: 5000
   }
 ]
 
@@ -132,8 +142,8 @@ function createCard(upgrade) {
   header.classList.add('title');
   const cost = document.createElement('p');
 
-  header.textContent = upgrade.name + ', +' + upgrade.amount + ' likes per sekund.';
-  cost.textContent = 'Köp för ' + upgrade.cost + ' likes';
+  header.textContent = upgrade.name + ', +' + upgrade.amount + ' Mana Per Second.';
+  cost.textContent = 'Buy for ' + upgrade.cost + ' Mana Points';
 
   card.addEventListener('click', (e) => {
     if (money >= upgrade.cost) {
