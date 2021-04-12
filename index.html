@@ -5,24 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="stylesheets/style.css">
-  <title>Något är fel på internet</title>
+  <title>Mana Stuff</title>
   <link rel="shortcut icon" type="image/png" href="FaviconClicker.png">
 </head>
 
 
-<body class="d-flex h-100 flex-column">
+<body class="d-flex h-100 flex-column" style="background-color: rgb(17, 17, 17);">
   <main class="container">
-    <div class="row justify-center">
-      <a href="https://xkcd.com/386">
-        <img src="https://imgs.xkcd.com/comics/duty_calls.png " alt="Källa: https://xkcd.com/386/">
-      </a>
-    </div>
     <div class="row">
-      <p>Något är fel på nätet, det är dags att ta saken i egna händer och göra någonting åt detta.</p>
-      <p>Räddningen finns såklart genom sociala medier!</p>
-    </div>
-    <div class='row'>
-      <div class="column justify-center align-center">
+      <div class="column justify-center align-center whitetext" style="border: 1px solid red;">
+        
         <div class="w-100">
           <h1>Mana Points: <span id="Mana"></span></h1>
         </div>
@@ -34,25 +26,30 @@
         <div class="w-100">
           <h1>Mana per Click: <span id="mpc"></span></h1>
         </div>
+    
 
         <div class="w-100">
           <h1>Buyables</h1>
           <div id="upgradelist"></div>
         </div>
+        
       </div>
-      <div class="column justify-center align-center">
+
+
+      <div class="column justify-center align-center" style="border: 1px solid red;">
         <div>
           <button id="click"></button>
         </div>
       </div>
+
+
     </div>
     <div class='row'>
       <div id="msgbox"></div>
     </div>
   </main>
   <footer>
-    <div class="container d-flex justify-between">
-      <p>Bild från <a href="https://xkcd.com">XKCD</a>.</p>
+    <div class="container d-flex justify-between whitetext">
       <p>Kod från <a href="https://github.com/jensnti">Jens</a>.</p>  
     </div>
   </footer>
