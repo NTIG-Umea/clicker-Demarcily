@@ -4,7 +4,7 @@ img {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 footer {
@@ -20,7 +20,11 @@ footer {
   background:url("/BimageClicker.png");
   background-size: cover;
   border-radius: 100%;
-  border: 4px solid black;
+  border: 4px solid rgb(56, 56, 56);
+}
+
+#click:active {
+  border: 3px solid rgb(56, 56, 56);
 }
 
 button:focus {

@@ -91,7 +91,7 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
   {
-    name: 'Mana Infused Candles',
+    name: 'Mana Infused Candle',
     cost: 10,
     amount: 1,
     Tamount: 0
@@ -103,7 +103,7 @@ upgrades = [
     Tamount: 0
   },
   {
-    name: 'Students',
+    name: 'Student',
     cost: 1000,
     amount: 100,
     Tamount: 0
@@ -150,7 +150,7 @@ function createCard(upgrade) {
 
   Tamount.textContent = '(' + upgrade.Tamount + ')';
   header.textContent = upgrade.name + ', +' + upgrade.amount + ' Mana Per Second.';
-  cost.textContent = 'Buy for ' + upgrade.cost + ' Mana points';
+  cost.textContent = 'Costs ' + upgrade.cost + ' Mana';
 
 
   card.addEventListener('click', (e) => {
@@ -159,7 +159,7 @@ function createCard(upgrade) {
       Mana -= upgrade.cost;
       upgrade.cost *= 1.5;
       upgrade.Tamount++;
-      cost.textContent = 'Buy for ' + Math.round(upgrade.cost) + ' Mana points';
+      cost.textContent = 'Costs ' + Math.round(upgrade.cost) + ' Mana';
       Tamount.textContent = '(' + upgrade.Tamount + ')';
       ManaPerSecond += upgrade.amount;
       message('You bought "' + upgrade.name + '"', 'success');
