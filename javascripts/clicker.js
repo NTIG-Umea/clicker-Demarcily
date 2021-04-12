@@ -150,7 +150,7 @@ function createCard(upgrade) {
 
   Tamount.textContent = '(' + upgrade.Tamount + ')';
   header.textContent = upgrade.name + ', +' + upgrade.amount + ' Mana Per Second.';
-  cost.textContent = 'Costs ' + upgrade.cost + ' Mana';
+  cost.textContent = 'Costs: ' + upgrade.cost + ' Mana';
 
 
   card.addEventListener('click', (e) => {
@@ -159,7 +159,7 @@ function createCard(upgrade) {
       Mana -= upgrade.cost;
       upgrade.cost *= 1.5;
       upgrade.Tamount++;
-      cost.textContent = 'Costs ' + Math.round(upgrade.cost) + ' Mana';
+      cost.textContent = 'Costs: ' + Math.round(upgrade.cost) + ' Mana';
       Tamount.textContent = '(' + upgrade.Tamount + ')';
       ManaPerSecond += upgrade.amount;
       message('You bought "' + upgrade.name + '"', 'success');

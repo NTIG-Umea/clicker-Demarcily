@@ -121,6 +121,12 @@ button:focus {
   color: rgb(225, 227, 225);
 }
 
+.textIcons {
+  float:left; 
+  width: 20px; 
+  padding-right: 5px;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

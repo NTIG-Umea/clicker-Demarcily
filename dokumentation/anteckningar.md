@@ -6,3 +6,8 @@ Tema: Magic
 Valde temat Magi/Magic
 Skapade logga som också är knappen [här](/BimageClicker.png)
 Lyckades lägga till loggan som en icon för sidan
+
+### 2021-04-12
+Ändrade backgruden till svart och texten vit
+En indikator att knappen blir tryckt 
+La till en ikon Mana, Mps och Mpc men kommer troligen att skafa en ny senare
