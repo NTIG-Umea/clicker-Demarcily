@@ -21,7 +21,7 @@ footer {
   width: 24rem;
   height: 24rem;
   font-size: 2rem;
-  background:url("/bimageclicker.png");
+  background:url("../BimageClicker.png");
   background-size: cover;
   border-radius: 100%;
   border: 4px solid rgb(56, 56, 56);
