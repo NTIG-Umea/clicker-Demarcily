@@ -11,3 +11,6 @@ Lyckades lägga till loggan som en icon för sidan
 Ändrade backgruden till svart och texten vit
 En indikator att knappen blir tryckt 
 La till en ikon Mana, Mps och Mpc men kommer troligen att skafa en ny senare
+
+### 2021-04-19 
+Små ändringar och har validerat både html och css
