@@ -1,4 +1,8 @@
 /* elements */
+body {
+  margin: 0 auto;
+}
+
 img {
   max-width: 100%;
 }
@@ -155,5 +159,12 @@ button:focus {
 @media (max-width: 540px) {
   .row {
     flex-direction: column-reverse;
+  }
+  #click {
+    width: 16rem;
+    height: 16rem;
+  }
+  .container {
+    padding-left: 2px;
   }
 }
